@@ -29,10 +29,6 @@ class ResetpassViewController: UIViewController {
     @IBAction func redirect_to_create_an_account(_ sender: Any) {
     }
     
-    
-    
-    
-    
 
     /*
     // MARK: - Navigation
