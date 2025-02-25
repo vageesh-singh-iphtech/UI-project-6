@@ -7,17 +7,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UITextFieldDelegate {
 
+    
+    @IBOutlet weak var emailid_field: UITextField!
+    @IBOutlet var password_field: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+          emailid_field.delegate = self
+          password_field.delegate = self
     }
-    
-    @IBOutlet weak var emailid_field: UITextField!
-    
-    @IBOutlet var password_field: UITextField!
+   
     
     @IBAction func login_btn(_ sender: UIButton) {
     }
@@ -32,7 +34,11 @@ class LoginViewController: UIViewController {
     }
     
     
-    
+    // MARK: - UITextFieldDelegate Dellegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
     
     /*
     // MARK: - Navigation

@@ -33,6 +33,14 @@ class WelcomeViewController: UIViewController {
         
         var mathfunction: (Int,Int) -> Int = addtwoints
         
+        // Calling the function increment which is already inside another
+        // function named makeIncrement()
+        
+        let increment = makeIncrement()
+        let result = increment(5)
+        print(result)
+        
+        
         
         
         // Do any additional setup after loading the view.

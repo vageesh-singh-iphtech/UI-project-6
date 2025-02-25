@@ -7,17 +7,24 @@
 
 import UIKit
 
-class RegViewController: UIViewController {
+class RegViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var name_field: UITextField!
+    @IBOutlet weak var emailid_field: UITextField!
+    @IBOutlet weak var password_field: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        name_field.delegate = self
+        emailid_field.delegate = self
+        password_field.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet var name_field: UITextField!
-    
-    @IBOutlet var emailid_field: UITextField!
+
     
     @IBAction func signup_btn(_ sender: Any) {
     }
@@ -28,13 +35,22 @@ class RegViewController: UIViewController {
     
     @IBAction func login_here(_ sender: Any) {
     }
+
+    
+    // MARK: - Navigation
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     
     
     
     
     /*
     // MARK: - Navigation
-
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.

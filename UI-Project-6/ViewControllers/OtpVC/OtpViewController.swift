@@ -7,15 +7,18 @@
 
 import UIKit
 
-class OtpViewController: UIViewController {
+class OtpViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet var otp_field: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        otp_field.delegate = self
     }
     
-    @IBOutlet var otp_field: UITextField!
+
     
 
     @IBAction func verify_otp(_ sender: Any) {
@@ -25,6 +28,10 @@ class OtpViewController: UIViewController {
     }
     
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 
     /*

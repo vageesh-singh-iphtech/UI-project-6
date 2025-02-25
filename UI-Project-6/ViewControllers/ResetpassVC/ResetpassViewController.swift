@@ -7,29 +7,32 @@
 
 import UIKit
 
-class ResetpassViewController: UIViewController {
+class ResetpassViewController: UIViewController, UITextFieldDelegate{
 
+    @IBOutlet weak var new_password: UITextField!
+    @IBOutlet weak var re_enter_password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        new_password.delegate = self
+        re_enter_password.delegate = self
     }
-    
-    @IBOutlet var new_password: UITextField!
-    
-    
-    @IBOutlet var re_enter_password: UITextField!
     
     
     @IBAction func reset_password(_ sender: Any) {
     }
     
-    
-    
     @IBAction func redirect_to_create_an_account(_ sender: Any) {
     }
     
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
     /*
     // MARK: - Navigation
 
